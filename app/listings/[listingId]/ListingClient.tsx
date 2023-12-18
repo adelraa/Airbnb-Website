@@ -11,12 +11,11 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 
 
-
+import { categories } from "@/app/components/Navbar/Categories";
+import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import ListingReservation from "@/app/components/listings/ListingReservation";
-import { categories } from "@/app/components/Navbar/Categories";
 import Container from "@/app/components/container";
-import ListingHead from "@/app/components/listings/ListingHead";
 
 const initialDateRange = {
   startDate: new Date(),
@@ -43,7 +42,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
   const disabledDates = useMemo(() => {
     let dates: Date[] = [];
 
-    reservations.forEach((reservation) => {
+    reservations.forEach((reservation: any) => {
       const range = eachDayOfInterval({
         start: new Date(reservation.startDate),
         end: new Date(reservation.endDate)
@@ -157,7 +156,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
               <ListingReservation
                 price={listing.price}
                 totalPrice={totalPrice}
-                onChangeDate={(value: any) => setDateRange(value)}
+                onChangeDate={(value) => setDateRange(value)}
                 dateRange={dateRange}
                 onSubmit={onCreateReservation}
                 disabled={isLoading}
