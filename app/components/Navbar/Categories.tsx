@@ -21,6 +21,7 @@ import CategoryBox from "../CategoryBox";
 import Container from '../container';
 
 
+
 export const categories = [
   {
     label: 'Beach',
