@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({
         >
           
           <Avatar src={"/logo.png"} onClick={() => router.push('/')} style=' md:block cursor-pointer '/>
-          {/* <Search /> */}
+        
           <UserMenu currentUser={currentUser} />
         </div>
       </Container>
