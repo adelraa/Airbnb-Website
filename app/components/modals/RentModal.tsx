@@ -22,7 +22,7 @@ import CountrySelect from '../inputs/CountrySelect'
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
 import Heading from '../Heading';
-// import { categories } from '../Navbar/Categories';
+import { categories } from '../Navbar/Categories';
 
 enum STEPS {
   CATEGORY = 0,
@@ -148,7 +148,7 @@ const RentModal = () => {
           overflow-y-auto
         "
       >
-        {/* {categories.map((item) => (
+        {categories.map((item) => (
           <div key={item.label} className="col-span-1">
             <CategoryInput
               onClick={(category) => 
@@ -158,7 +158,7 @@ const RentModal = () => {
               icon={item.icon}
             />
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   )
